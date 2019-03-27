@@ -35,45 +35,45 @@ int _tmain(int argc, _TCHAR* argv[])
 	lcid = GetThreadLocale();
 	hr = CompareString(lcid, NORM_IGNORECASE, aa, _countof(aa), bb, _countof(bb));
 	if (hr == CSTR_EQUAL){
-		printf("equal %d\n", lcid);
+		_tprintf(TEXT("equal %d\n"), lcid);
 	}
 	else if (hr == CSTR_GREATER_THAN){
-		printf("string1 greater than 2\n");
+		_tprintf(TEXT("string1 greater than 2\n"));
 	}
 	else if (hr == CSTR_LESS_THAN){
-		printf("string1 less than 2\n");
+		_tprintf(TEXT("string1 less than 2\n"));
 	}
 
 	hr = WideCharToMultiByte(0, 0, bb, _countof(bb), buf, _countof(buf), NULL, FALSE);
 	if (hr){
-		printf("buf = %s\n", buf);
+		_tprintf(TEXT("buf = %s\n"), buf);
 	}
 	else{
 		FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_ALLOCATE_BUFFER,
 			NULL,
 			GetLastError(), lcid, (PWSTR)&hlc, 0, NULL);
 
-		printf("error %ws\n", hlc);
+		_tprintf(TEXT("error %ws\n"), hlc);
 		LocalFree(hlc);
 	}
 
 	if (IsTextUnicode(ch, _countof(ch), NULL)){
-		printf("Unicode\n");
+		_tprintf(TEXT("Unicode\n"));
 	}
 	else{
-		printf("Not unicode\n");
+		_tprintf(TEXT("Not unicode\n"));
 	}
 
 	StringReverseW(rvws, _countof(rvws));
 	hr = CompareString(lcid, NORM_IGNORECASE, rvws, _countof(rvws), rvws2, _countof(rvws2));
 	if (hr == CSTR_EQUAL){
-		printf("equal\n");
+		_tprintf(TEXT("equal\n"));
 	}
 	else if (hr == CSTR_GREATER_THAN){
-		printf("string1 greater than 2\n");
+		_tprintf(TEXT("string1 greater than 2\n"));
 	}
 	else if (hr == CSTR_LESS_THAN){
-		printf("string1 less than 2\n");
+		_tprintf(TEXT("string1 less than 2\n"));
 	}
 
 	getchar();
