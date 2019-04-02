@@ -1,2 +1,3 @@
-# Win32_API_Practice_Programs
-Basic use of Windows API(Win32 API)  in C/C++, Programs like Processes/Threads/Fibers, DiskUtil, Semaphore/Mutex, VMem, Heap, SEH
+# Win32_API_Programs
+Simple of Windows API(Win32 API) programs in C/C++.
+Programs like using Processes/Threads/Fibers, DiskUtil, Semaphore/Mutex, Virtual Memory, Heap, Structured Exception Handling(SEH)
